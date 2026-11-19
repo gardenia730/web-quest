@@ -6,7 +6,7 @@
    ========================================================= */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Bricolage+Grotesque:opsz,wght@12..96,800&display=swap");
 
-body.theme-taro    { --bg: #dde8ff; --card: #fcfaff; --ink: #0e2f84; --soft: #000000; --main: #4c6bad; --pop: #00ccff; --line: #d4e1ef; }
+body.theme-blue    { --bg: #dde8ff; --card: #fcfaff; --ink: #0e2f84; --soft: #000000; --main: #4c6bad; --pop: #00ccff; --line: #d4e1ef; }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
