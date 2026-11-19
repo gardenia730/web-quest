@@ -1,12 +1,17 @@
 /* =========================================================
    theme.css — W2 推坑專頁的衣服 👕
-   這週一樣先借穿，你只要寫 HTML。
-   換配色：到 index.html 把 <body class="theme-milktea">
-   改成 theme-milktea（奶茶）/ theme-matcha（抹茶）/ theme-taro（芋頭）
    ========================================================= */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Bricolage+Grotesque:opsz,wght@12..96,800&display=swap");
 
-body.theme-blue    { --bg: #dde8ff; --card: #fcfaff; --ink: #0e2f84; --soft: #000000; --main: #4c6bad; --pop: #00ccff; --line: #d4e1ef; }
+body.theme-blue {
+  --bg: #dde8ff;
+  --card: #fcfaff;
+  --ink: #0e2f84;
+  --soft: #000000;
+  --main: #4c6bad;
+  --pop: #00ccff;
+  --line: #d4e1ef;
+}
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -36,7 +41,12 @@ nav a:hover { background: var(--main); color: #fff; }
 
 /* ---------- main + aside：兩欄 ---------- */
 main { max-width: 980px; margin: 0 auto; padding: 32px 20px 48px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; }
-@media (min-width: 860px) { main { grid-template-columns: minmax(0, 1fr) 280px; align-items: start; } aside { position: sticky; top: 70px; grid-column: 2; grid-row: 1 / span 6; } }
+@media (min-width: 860px) {
+  main { grid-template-columns: minmax(0, 1fr) 280px; align-items: start; }
+  /* 相簿頁面沒有 aside，讓 main 保持單欄滿版 */
+  main.gallery-page { grid-template-columns: minmax(0, 1fr); }
+  aside { position: sticky; top: 70px; grid-column: 2; grid-row: 1 / span 6; }
+}
 section, aside, article {
   background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 26px 28px;
 }
@@ -82,3 +92,105 @@ button:active { transform: translateY(3px); box-shadow: 0 3px 0 rgba(0,0,0,.15);
 /* ---------- footer ---------- */
 footer { text-align: center; padding: 28px 16px 40px; color: var(--soft); font-size: .9rem; }
 footer a { color: var(--soft); }
+
+/* =========================================================
+   新增 1：相簿網格 (Gallery Grid) ＋ 滑鼠懸停放大發光特效
+   ========================================================= */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 16px;
+}
+
+.gallery-grid figure {
+  margin: 0;
+  background: var(--bg);
+  border: 2px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* 滑鼠移過去時：整張卡片微浮起 + 圖片放大 + 應援藍發光外框 */
+.gallery-grid figure:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: var(--pop);
+  box-shadow: 0 10px 25px rgba(0, 204, 255, 0.45), 0 0 12px rgba(76, 107, 173, 0.3);
+}
+
+.gallery-grid .img-box {
+  overflow: hidden;
+  height: 240px;
+  background: #fff;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.gallery-grid figure:hover img {
+  transform: scale(1.08);
+}
+
+.gallery-grid figcaption {
+  padding: 12px 14px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* =========================================================
+   新增 2：側邊欄生日倒數計時器
+   ========================================================= */
+.countdown-box {
+  margin-top: 18px;
+  padding: 16px 14px;
+  background: var(--bg);
+  border: 2px dashed var(--main);
+  border-radius: 14px;
+  text-align: center;
+}
+
+.countdown-box h3 {
+  font-size: 1rem;
+  margin: 0 0 12px;
+  color: var(--ink);
+}
+
+.countdown-timer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.time-unit {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 8px 4px;
+  box-shadow: 0 3px 6px rgba(14, 47, 132, 0.06);
+}
+
+.time-unit span {
+  display: block;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.45rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--main);
+}
+
+.time-unit small {
+  font-size: 0.8rem;
+  color: var(--ink);
+  font-weight: 700;
+}

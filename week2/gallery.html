@@ -17,62 +17,79 @@
 
   <nav>
     <ul>
-      <li><a href="index.html"> 回推坑首頁</a></li>
-      <li><a href="#stage"> 舞台魅力</a></li>
-      <li><a href="#movies"> 影視劇照</a></li>
-      <li><a href="#daily"> 日常碎片</a></li>
+      <li><a href="index.html">回推坑首頁</a></li>
+      <li><a href="#stage">舞台魅力</a></li>
+      <li><a href="#movies">影視劇照</a></li>
+      <li><a href="#daily">日常碎片</a></li>
     </ul>
   </nav>
 
-  <main>
+  <!-- 1. 加上 class="gallery-page" 讓相簿佔滿整欄 -->
+  <main class="gallery-page">
     <section id="stage">
       <h2>🎤 舞台與專輯大片</h2>
       <p>每一個眼神與動作，都是對舞台最赤誠的熱愛：</p>
       
-      <figure>
-        <img src="images/Karry.jpg" alt="王俊凱舞台寫真">
-        <figcaption>✨ 《K》篇章｜光影之下的少年感與成熟蛻變</figcaption>
-      </figure>
+      <!-- 2. 必須用 class="gallery-grid" 把所有 figure 包起來 -->
+      <div class="gallery-grid">
+        <figure>
+          <!-- 3. img 要放在 img-box 裡面 -->
+          <div class="img-box">
+            <img src="images/Karry.jpg" alt="王俊凱舞台寫真">
+          </div>
+          <figcaption>✨ 《K》篇章｜光影之下的少年感與成熟蛻變</figcaption>
+        </figure>
 
-      <!-- 之後有新照片放到 images/ 資料夾後，複製下面這段修改檔名即可 -->
-      <figure>
-        <img src="images/Karry.svg" alt="王俊凱專輯概念圖">
-        <figcaption>🩵 專輯視覺概念｜藍色星海中的孤獨與熱烈</figcaption>
-      </figure>
+        <figure>
+          <div class="img-box">
+            <img src="images/Karry.svg" alt="王俊凱專輯概念圖">
+          </div>
+          <figcaption>🩵 專輯視覺概念｜藍色星海中的孤獨與熱烈</figcaption>
+        </figure>
+      </div>
     </section>
 
-    <section id="stage">
-      <h2>🎤 舞台與專輯大片</h2>
-      <p>每一個眼神與動作，都是對舞台最赤誠的熱愛：</p>
+    <section id="movies">
+      <h2>🎬 影視劇照</h2>
+      <p>每一次大銀幕的眼神切換，都是角色靈魂的注入：</p>
       
-      <figure>
-        <img src="images/Karry.jpg" alt="王俊凱舞台寫真">
-        <figcaption>✨ 《K》篇章｜光影之下的少年感與成熟蛻變</figcaption>
-      </figure>
+      <div class="gallery-grid">
+        <figure>
+          <div class="img-box">
+            <img src="images/Karry.jpg" alt="影視劇照1">
+          </div>
+          <figcaption>🎞️ 電影角色定格｜眼神裡全是故事</figcaption>
+        </figure>
 
-      <!-- 之後有新照片放到 images/ 資料夾後，複製下面這段修改檔名即可 -->
-      <figure>
-        <img src="images/Karry.svg" alt="王俊凱專輯概念圖">
-        <figcaption>🩵 專輯視覺概念｜藍色星海中的孤獨與熱烈</figcaption>
-      </figure>
+        <figure>
+          <div class="img-box">
+            <img src="images/Karry.svg" alt="影視劇照2">
+          </div>
+          <figcaption>🎬 劇組花絮｜認真研讀劇本的專注瞬間</figcaption>
+        </figure>
+      </div>
     </section>
 
-    <section id="stage">
-      <h2>🎤 舞台與專輯大片</h2>
-      <p>每一個眼神與動作，都是對舞台最赤誠的熱愛：</p>
+    <section id="daily">
+      <h2>📷 日常碎片</h2>
+      <p>舞台上光芒萬丈，私底下卻是毫無包袱的可愛大男孩：</p>
       
-      <figure>
-        <img src="images/Karry.jpg" alt="王俊凱舞台寫真">
-        <figcaption>✨ 《K》篇章｜光影之下的少年感與成熟蛻變</figcaption>
-      </figure>
+      <div class="gallery-grid">
+        <figure>
+          <div class="img-box">
+            <img src="images/Karry.jpg" alt="日常照片1">
+          </div>
+          <figcaption>🦀 小螃蟹專屬視角｜溫柔永遠藏在細節裡</figcaption>
+        </figure>
 
-      <!-- 之後有新照片放到 images/ 資料夾後，複製下面這段修改檔名即可 -->
-      <figure>
-        <img src="images/Karry.svg" alt="王俊凱專輯概念圖">
-        <figcaption>🩵 專輯視覺概念｜藍色星海中的孤獨與熱烈</figcaption>
-      </figure>
+        <figure>
+          <div class="img-box">
+            <img src="images/Karry.svg" alt="日常照片2">
+          </div>
+          <figcaption>⛄ 狗仔蹲點拍到的堆雪人絕美大片</figcaption>
+        </figure>
+      </div>
     </section>
-
   </main>
 
   <footer>

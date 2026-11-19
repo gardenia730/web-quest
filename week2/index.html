@@ -6,7 +6,7 @@
   <title>入坑吧！凱皇的帝國🩵</title>
   <link rel="stylesheet" href="theme.css">
 </head>
-<body class="theme-bluwe">
+<body class="theme-blue">
   <header>
     <img src="images/Karry.svg" alt="《K》篇章">
     <div>
@@ -19,7 +19,7 @@
       <li><a href="#why">入坑理由</a></li>
       <li><a href="#rank">個人歌曲排行</a></li>
       <li><a href="#movies">影視作品</a></li>
-      <li><a href="#public welfare">公益活動</a></li>
+      <li><a href="#public-welfare">公益活動</a></li>
       <li><a href="#route">新手路線</a></li>
       <li><a href="#guestbook">留言板</a></li>
       <li><a href="gallery.html">照片相簿</a></li>
@@ -71,7 +71,7 @@
         </tr>
         <tr>
           <td>4</td>
-          <td><a href="https://youtu.be/D.	Beautiful?si=35bk-I0IgNCEqspQ" target="_blank">Beautiful</a></td>
+          <td><a href="https://youtu.be/D.Beautiful?si=35bk-I0IgNCEqspQ" target="_blank">Beautiful</a></td>
           <td>★★★★☆</td>
           <td>少數的英文歌，是一首充滿R&B節奏感的甜美情歌，打破粉絲的容貌焦慮，對粉絲的專屬情話</td>
         </tr>
@@ -87,21 +87,23 @@
       <h2>🎬 影視作品</h2>
       <p>小凱在影視圈也有不少精彩表現：</p>
       <ol>
-        <li>電影：</li>
-        <ul>
-          <li><strong>《解憂雜貨店》</strong>：飾演小波</li>
-          <li><strong>《斷·橋》</strong>：飾演孟超</li>
-          <li><strong>《野孩子》</strong>：飾演馬亮</li>
-        </ul>
-        <li>電視劇：</li>
-        <ul>
-          <li><strong>《超少年密碼》</strong>：飾演夏常安、001</li>
-          <li><strong>《我們的少年時代》</strong>：飾演鄔童</li>
-          <li><strong>《重生之門》</strong>：飾演莊文杰</li>
-        </ul>
+        <li>電影：
+          <ul>
+            <li><strong>《解憂雜貨店》</strong>：飾演小波</li>
+            <li><strong>《斷·橋》</strong>：飾演孟超</li>
+            <li><strong>《野孩子》</strong>：飾演馬亮</li>
+          </ul>
+        </li>
+        <li>電視劇：
+          <ul>
+            <li><strong>《超少年密碼》</strong>：飾演夏常安、001</li>
+            <li><strong>《我們的少年時代》</strong>：飾演鄔童</li>
+            <li><strong>《重生之門》</strong>：飾演莊文杰</li>
+          </ul>
+        </li>
       </ol>
     </section>
-    <section id="public welfare">
+    <section id="public-welfare">
       <h2>⭐ 公益活動</h2>
       <p>你以為只有這樣嗎？是的話那就大錯特錯啦！我們小凱也熱心於公益活動：</p>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/ra7XIiGMhio?si=0FW7fYRlkBjNhkE9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -144,7 +146,7 @@
           </select>
         </div>
         <div>
-          <label for="checkbox">想看怎樣的他</label>
+          <label>想看怎樣的他</label>
           <input type="checkbox" name="appearance" value="唱歌"> 唱歌的他
           <input type="checkbox" name="appearance" value="跳舞"> 跳舞的他
           <input type="checkbox" name="appearance" value="演戲"> 演戲的他
@@ -162,10 +164,20 @@
     <aside>
       <h2>📌 關於小凱の小知識</h2>
       <ul>
-        <li>🎖️ 金氏世界紀錄保持者：他曾在在15歲時創下<strong>轉發量最多的微博訊息</strong>金氏世界紀錄</li>
+        <li>🎖️ 金氏世界紀錄保持者：他曾在15歲時創下<strong>轉發量最多的微博訊息</strong>金氏世界紀錄</li>
         <li>💤 睜眼睡覺：他曾被隊友爆料睡覺經常是<strong>眼睛半睜開、嘴巴微張</strong>的狀態</li>
         <li>💪 不能練腹肌的梗：他曾回答因為太累了，後來粉絲們就順水推舟拿他有<strong>低血糖</strong>當作完美藉口</li>
       </ul>
+
+      <div class="countdown-box">
+        <h3 id="countdown-title">🎂 距離小凱生日還有</h3>
+        <div class="countdown-timer">
+          <div class="time-unit"><span id="cd-days">00</span><small>天</small></div>
+          <div class="time-unit"><span id="cd-hours">00</span><small>時</small></div>
+          <div class="time-unit"><span id="cd-mins">00</span><small>分</small></div>
+          <div class="time-unit"><span id="cd-secs">00</span><small>秒</small></div>
+        </div>
+      </div>
     </aside>
   </main>
   <footer>
@@ -173,6 +185,8 @@
     <p><a href="#">↑ 回到最上面</a></p>
   </footer>
 
+  <script src="countdown.js"></script>
+</body>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"7e37587e062341558700a38a24e1dc18","r":1,"spa":2}' crossorigin="anonymous"></script>
 <script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a5655c148beff312',t:'MTc5Mzk4MTMzNQ=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a5655c148beff312',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
