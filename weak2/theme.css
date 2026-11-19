@@ -6,10 +6,7 @@
    ========================================================= */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Bricolage+Grotesque:opsz,wght@12..96,800&display=swap");
 
-/* 每個主題只換這幾個顏色 */
-body.theme-milktea { --bg: #fbf3e8; --card: #fffaf3; --ink: #3b2418; --soft: #8a6a55; --main: #c0703b; --pop: #ff6b6b; --line: #ead8c2; }
-body.theme-matcha  { --bg: #eef3e6; --card: #fbfdf7; --ink: #1f2e1a; --soft: #5f735a; --main: #4f8a3a; --pop: #e8a33d; --line: #d3e0c6; }
-body.theme-taro    { --bg: #f2ecf8; --card: #fcfaff; --ink: #2c1f3d; --soft: #6e5f84; --main: #8a5cc4; --pop: #ff8fb1; --line: #e0d4ef; }
+body.theme-taro    { --bg: #dde8ff; --card: #fcfaff; --ink: #0e2f84; --soft: #000000; --main: #4c6bad; --pop: #00ccff; --line: #d4e1ef; }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
