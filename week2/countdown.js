@@ -43,7 +43,7 @@ updateBirthdayCountdown();
 setInterval(updateBirthdayCountdown, 1000);
 
 // =========================================================
-// 2. 演唱會「藍色星海」夜間模式切換（同步記錄到瀏覽器）
+// 2. 演唱會「藍色星海」夜間模式切換
 // =========================================================
 const themeBtn = document.getElementById("starlight-toggle");
 
@@ -67,13 +67,20 @@ if (themeBtn) {
 applySavedTheme();
 
 // =========================================================
-// 3. 實體 PVC 應援識別證生成器（支援 localStorage 永久保留）
+// 3. 實體 PVC 應援識別證生成器（不保留歷史紀錄版）
 // =========================================================
 const fanForm = document.getElementById("fan-form");
 const ticketWall = document.getElementById("ticket-wall");
 
-function renderTicket(ticketData, prepend = false) {
+// 自動清除瀏覽器先前存下來的舊識別證紀錄
+localStorage.removeItem("karry_tickets");
+
+function renderTicket(ticketData) {
   if (!ticketWall) return;
+
+  // 若你希望每次送出只顯示「最新這一張」（不往上疊加），保留下面這行；
+  // 若希望同一次瀏覽期間可以連續生成多張，把這行刪掉即可。
+  ticketWall.innerHTML = "";
 
   const card = document.createElement("article");
   card.className = "fan-id-card";
@@ -123,29 +130,7 @@ function renderTicket(ticketData, prepend = false) {
     </div>
   `;
 
-  if (prepend) {
-    ticketWall.prepend(card);
-  } else {
-    ticketWall.appendChild(card);
-  }
-}
-
-function loadTickets() {
-  if (!ticketWall) return;
-  const saved = JSON.parse(localStorage.getItem("karry_tickets") || "[]");
-  if (saved.length === 0) {
-    renderTicket({
-      id: "0921",
-      nickname: "八年小螃蟹代表",
-      level: "死忠粉 🦀",
-      favorite: "只要是他都喜歡",
-      appearances: "唱歌、演戲",
-      message: "從開始到未來，只為王俊凱！歡迎新朋友一起跳進這個坑🩵",
-      date: "2026/09/21"
-    });
-  } else {
-    saved.forEach((item) => renderTicket(item));
-  }
+  ticketWall.appendChild(card);
 }
 
 if (fanForm) {
@@ -169,7 +154,7 @@ if (fanForm) {
     const dateStr = `${now.getFullYear()}/${String(now.getMonth() + 1).padStart(2, "0")}/${String(now.getDate()).padStart(2, "0")}`;
     const randomNo = String(Math.floor(1000 + Math.random() * 9000));
 
-    const newTicket = {
+    renderTicket({
       id: randomNo,
       nickname,
       level,
@@ -177,16 +162,8 @@ if (fanForm) {
       appearances,
       message,
       date: dateStr
-    };
-
-    renderTicket(newTicket, true);
-
-    const saved = JSON.parse(localStorage.getItem("karry_tickets") || "[]");
-    saved.unshift(newTicket);
-    localStorage.setItem("karry_tickets", JSON.stringify(saved));
+    });
 
     fanForm.reset();
   });
 }
-
-loadTickets();
