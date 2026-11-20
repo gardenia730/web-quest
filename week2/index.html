@@ -25,6 +25,7 @@
       <li><a href="gallery.html">照片相簿</a></li>
     </ul>
   </nav>
+  <li><button type="button" id="starlight-toggle" class="theme-toggle-btn">🌌 點亮藍色星海</button></li>
   <main>
     <section id="why">
       <h2>🩵 為什麼要入坑？</h2>
@@ -121,7 +122,7 @@
     <section id="guestbook">
       <h2>✍️ 留言板</h2>
       <p>給點螃蟹飼料可以嗎？</p>
-      <form action="#">
+      <form action="#" id="fan-form">
         <div>
           <label for="nickname">暱稱</label>
           <input type="text" id="nickname" placeholder="例如：等待物料的小螃蟹">
@@ -160,6 +161,17 @@
         <label><input type="checkbox"> 我願意收到下一次的推坑通知</label>
         <button type="submit">送出留言 🚀</button>
       </form>
+      <section id="guestbook">
+        <h2>✍️ 領取小螃蟹應援通行證</h2>
+        <p>填寫你的入坑檔案，立即生成專屬發光電子票根！</p>
+        <form id="fan-form" action="#">
+          <!-- 原本的 input / fieldset / select / textarea / button 全部保留不動 -->
+          ...
+        </form>
+
+        <!-- 即時生成的電子票根會出現在這裡 -->
+        <div id="ticket-wall" class="ticket-wall"></div>
+      </section>
     </section>
     <aside>
       <h2>📌 關於小凱の小知識</h2>
